@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var ui_anim_imageview: UIImageView!
-    @IBOutlet weak var ui_sliderSpeed: UISlider!
     
     let catFrames = [UIImage(named: "anim_cat_1"),
                      UIImage(named: "anim_cat_2"),
@@ -24,19 +23,29 @@ class ViewController: UIViewController {
     
     var frameCount: Int = 0
     var timer: Timer?
-    var defaultSpeedValue: Double = 0.1
-    var timerInterval: Double = 2
-    var newTimerInterval: Double = 0
+    var timerInterval: Double = 0.2
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        slider_animSpeedChanged(ui_sliderSpeed)
+        //slider_animSpeedChanged(ui_sliderSpeed)
+        
+        UserDefaults.standard.register(defaults: ["ANIM-SPEED" : 0.2])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAnimSpeed()
         startAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+        timer = nil
     }
 
     func startAnimation() {
-        timerInterval = newTimerInterval
         
         timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false, block: { (_) in
             if self.frameCount < 7 {
@@ -49,12 +58,11 @@ class ViewController: UIViewController {
         })
     }
     
+    func getAnimSpeed () {
+        timerInterval = UserDefaults.standard.double(forKey: "ANIM-SPEED")
+    }
+    
     func changeAnimFrame () {
         ui_anim_imageview.image = catFrames[frameCount]
     }
-
-    @IBAction func slider_animSpeedChanged(_ sender: UISlider) {
-        newTimerInterval = defaultSpeedValue / (Double(sender.value) / Double(sender.maximumValue))
-    }
 }
-
