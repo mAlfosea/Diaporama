@@ -22,13 +22,13 @@ class ReglagesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        newTimerInterval = UserDefaults.standard.double(forKey: "ANIM-SPEED")
+        newTimerInterval = UserData.getInstance().animSpeed
         ui_sliderAnimSpeed.value = Float( 1 / newTimerInterval)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserDefaults.standard.set(newTimerInterval, forKey: "ANIM-SPEED")
+        UserData.getInstance().animSpeed = newTimerInterval
         UserDefaults.standard.synchronize()
     }
     

@@ -13,6 +13,7 @@
 		84AFEB0E229680A7002A5864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AFEB0D229680A7002A5864 /* Assets.xcassets */; };
 		84AFEB11229680A7002A5864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AFEB0F229680A7002A5864 /* LaunchScreen.storyboard */; };
 		84AFEB192296CC6C002A5864 /* ReglagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AFEB182296CC6C002A5864 /* ReglagesViewController.swift */; };
+		84AFEB1B2297D2AA002A5864 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AFEB1A2297D2AA002A5864 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		84AFEB10229680A7002A5864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AFEB12229680A7002A5864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84AFEB182296CC6C002A5864 /* ReglagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReglagesViewController.swift; sourceTree = "<group>"; };
+		84AFEB1A2297D2AA002A5864 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				84AFEB0F229680A7002A5864 /* LaunchScreen.storyboard */,
 				84AFEB12229680A7002A5864 /* Info.plist */,
 				84AFEB182296CC6C002A5864 /* ReglagesViewController.swift */,
+				84AFEB1A2297D2AA002A5864 /* UserData.swift */,
 			);
 			path = Diaporama;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				84AFEB09229680A6002A5864 /* ViewController.swift in Sources */,
 				84AFEB07229680A6002A5864 /* AppDelegate.swift in Sources */,
+				84AFEB1B2297D2AA002A5864 /* UserData.swift in Sources */,
 				84AFEB192296CC6C002A5864 /* ReglagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

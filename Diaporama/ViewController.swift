@@ -27,10 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //slider_animSpeedChanged(ui_sliderSpeed)
-        
-        UserDefaults.standard.register(defaults: ["ANIM-SPEED" : 0.2])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     func getAnimSpeed () {
-        timerInterval = UserDefaults.standard.double(forKey: "ANIM-SPEED")
+        timerInterval = UserData.getInstance().animSpeed
     }
     
     func changeAnimFrame () {
